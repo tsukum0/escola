@@ -29,19 +29,49 @@
       <h1 class="text-white text-5xl font-bold drop-shadow-lg" data-lang="mainTitle">SELM</h1>
     </header>
 
-    <!-- Conteúdo -->
-    <main class="flex-1 flex flex-col items-center justify-center px-4 py-10 space-y-4">
-      
+    <!-- Conteúdo com 3 caixas lado a lado -->
+    <main class="flex-1 flex flex-col items-center justify-center px-4 py-10 space-y-6">
+
       <!-- Título da seção -->
       <h2 class="text-white text-3xl font-semibold drop-shadow-md" data-lang="content">Links úteis</h2>
-      
-      <!-- Caixa -->
-      <div class="w-full max-w-4xl backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-8 text-white text-lg leading-relaxed">
-        <ul class="list-disc list-inside space-y-2">
-          <li><a href="https://www.google.com" class="text-blue-300 hover:underline">Google</a></li>
-          <li><a href="https://classroom.google.com" class="text-blue-300 hover:underline">Google Classroom</a></li>
-          <li><a href="https://meet.google.com" class="text-blue-300 hover:underline">Google Meet</a></li>
-        </ul>
+
+      <!-- Container das 3 caixas -->
+      <div class="w-full max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Caixa da esquerda -->
+        <div class="flex flex-col items-center">
+          <h3 class="text-white text-xl font-semibold mb-2">Link 1</h3>
+          <div class="w-full backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white text-base">
+            <ul class="list-disc list-inside space-y-2">
+              <li><a href="https://exemplo.com" class="text-blue-300 hover:underline">Exemplo A</a></li>
+              <li><a href="https://exemplo.com" class="text-blue-300 hover:underline">Exemplo B</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Caixa do meio -->
+        <div class="flex flex-col items-center">
+          <h3 class="text-white text-xl font-semibold mb-2">Link 2</h3>
+          <div class="w-full backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white text-base">
+            <ul class="list-disc list-inside space-y-2">
+              <li><a href="https://www.google.com" class="text-blue-300 hover:underline">Google</a></li>
+              <li><a href="https://classroom.google.com" class="text-blue-300 hover:underline">Google Classroom</a></li>
+              <li><a href="https://meet.google.com" class="text-blue-300 hover:underline">Google Meet</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Caixa da direita -->
+        <div class="flex flex-col items-center">
+          <h3 class="text-white text-xl font-semibold mb-2">Link 3</h3>
+          <div class="w-full backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white text-base">
+            <ul class="list-disc list-inside space-y-2">
+              <li><a href="https://exemplo.com" class="text-blue-300 hover:underline">Exemplo C</a></li>
+              <li><a href="https://exemplo.com" class="text-blue-300 hover:underline">Exemplo D</a></li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </main>
 
