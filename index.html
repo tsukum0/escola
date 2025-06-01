@@ -1,111 +1,81 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SELM - Escola</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-lang="title">Página com Caixa</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/168/168882.png" type="image/png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-    body {
-      background: linear-gradient(135deg, #1b1b1b, #2b2b2b);
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+  <body class="min-h-screen flex flex-col bg-cover bg-center" style="background-image: url('https://i.pinimg.com/1200x/a8/ab/20/a8ab20f94412b47bc5c22deab38dd358.jpg');">
 
-    header {
-      background: rgba(0, 123, 255, 0.2);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      padding: 20px;
-      text-align: center;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      color: #ffffff;
-      font-weight: bold;
-    }
-
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      padding: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .grid-item {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 30px;
-      text-align: center;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-
-    .grid-item:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: scale(1.03);
-    }
-
-    .grid-item a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    footer {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Escola</h1>
-  </header>
-
-  <main>
-    <div class="grid-container">
-      <div class="grid-item"><a href="#">Link 1</a></div>
-      <div class="grid-item"><a href="#">Link 2</a></div>
-      <div class="grid-item"><a href="#">Link 3</a></div>
-      <div class="grid-item"><a href="#">Link 4</a></div>
-      <div class="grid-item"><a href="#">Link 5</a></div>
-      <div class="grid-item"><a href="#">Link 6</a></div>
-      <div class="grid-item"><a href="#">Link 7</a></div>
-      <div class="grid-item"><a href="#">Link 8</a></div>
-      <div class="grid-item"><a href="#">Link 9</a></div>
-      <div class="grid-item"><a href="#">Link 10</a></div>
-      <div class="grid-item"><a href="#">Link 11</a></div>
-      <div class="grid-item"><a href="#">Link 12</a></div>
-      <div class="grid-item"><a href="#">Link 13</a></div>
-      <div class="grid-item"><a href="#">Link 14</a></div>
-      <div class="grid-item"><a href="#">Link 15</a></div>
-      <div class="grid-item"><a href="#">Link 16</a></div>
+    <!-- Botões superiores -->
+    <div class="fixed top-6 right-6 z-50 flex gap-3">
+      <!-- Home -->
+      <a href="/me/">
+        <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-xl shadow-md p-3 text-white hover:bg-white/20 transition duration-300">
+          ⬅ <span data-lang="home">Home</span>
+        </div>
+      </a>
+      <!-- Tradução -->
+      <button onclick="toggleLanguage()">
+        <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-xl shadow-md p-3 text-white hover:bg-white/20 transition duration-300">
+          🌐 <span data-lang="translate">Traduzir</span>
+        </div>
+      </button>
     </div>
-  </main>
 
-  <footer>
-    &copy; A
-  </footer>
-</body>
+    <!-- Título centralizado -->
+    <header class="mt-16 text-center px-4">
+      <h1 class="text-white text-5xl font-bold drop-shadow-lg" data-lang="mainTitle">Bem-vindo à nova página</h1>
+    </header>
+
+    <!-- Caixa de conteúdo grande -->
+    <main class="flex-1 flex items-center justify-center px-4 py-10">
+      <div class="w-full max-w-4xl backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-8 text-white text-lg leading-relaxed">
+        <p data-lang="content">
+          Esta é uma grande caixa de conteúdo com visual elegante e translúcido. Você pode colocar texto, imagens, formulários ou o que quiser aqui dentro.
+        </p>
+      </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="backdrop-blur-lg bg-white/10 border-t border-white/20 text-white text-center p-4 text-sm" data-lang="footer">
+      Criado com estilo 🚀
+    </footer>
+
+    <!-- Tradução -->
+    <script>
+      let currentLang = 'pt';
+
+      const translations = {
+        pt: {
+          title: 'Página com Caixa',
+          home: 'Home',
+          translate: 'Traduzir',
+          mainTitle: 'Bem-vindo à nova página',
+          content: 'Esta é uma grande caixa de conteúdo com visual elegante e translúcido. Você pode colocar texto, imagens, formulários ou o que quiser aqui dentro.',
+          footer: 'Criado com estilo 🚀'
+        },
+        en: {
+          title: 'Box Page',
+          home: 'Home',
+          translate: 'Translate',
+          mainTitle: 'Welcome to the new page',
+          content: 'This is a large content box with a stylish translucent look. You can place text, images, forms, or whatever you want inside.',
+          footer: 'Made with style 🚀'
+        }
+      };
+
+      function toggleLanguage() {
+        currentLang = currentLang === 'pt' ? 'en' : 'pt';
+        for (const [key, value] of Object.entries(translations[currentLang])) {
+          const el = document.querySelector(`[data-lang="${key}"]`);
+          if (el) el.textContent = value;
+        }
+      }
+    </script>
+
+  </body>
 </html>
