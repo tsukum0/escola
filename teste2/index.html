@@ -5196,11 +5196,11 @@
       console.log("✅ Banner removido.");
     }
 
-    // Bloco de título e autor
-    const blocoInfo = document.querySelector('section.Infostyled__Wrapper-sc-bmwuw5-0');
-    if (blocoInfo) {
-      blocoInfo.remove();
-      console.log("✅ Informações removidas.");
+    // Bloco de informações sociais (nome, título, avatar)
+    const blocoSocial = document.querySelector('div.SocialViewstyled__Paddings-sc-1bqtywi-0');
+    if (blocoSocial) {
+      blocoSocial.remove();
+      console.log("✅ Bloco social removido.");
     }
 
     // Transcrição
@@ -5210,26 +5210,28 @@
       console.log("✅ Transcrição removida.");
     }
 
-    // Rodapé com redes sociais e logo
-    const rodape = document.querySelector('div.SocialProfilestyled__Container-sc-1xd9o5x-0.Footerstyled__FooterContainerWrapper-sc-9xgbun-4');
-    if (rodape) {
-      rodape.remove();
-      console.log("✅ Rodapé removido.");
+    // Rodapé (componente completo)
+    const rodapeCompleto = document.querySelector('footer') || document.querySelector('div[class*="Footer"]');
+    if (rodapeCompleto) {
+      rodapeCompleto.remove();
+      console.log("✅ Rodapé inteiro removido.");
     }
 
-    // Finaliza quando tudo for removido
+    // Verifica se tudo foi removido
     if (
       !document.querySelector('[data-cy="defaultWatermark"]') &&
       !document.querySelector('section.StickyBannerstyled__Wrapper-sc-1oa946t-1') &&
-      !document.querySelector('section.Infostyled__Wrapper-sc-bmwuw5-0') &&
+      !document.querySelector('div.SocialViewstyled__Paddings-sc-1bqtywi-0') &&
       !document.querySelector('section.Transcriptionsstyled__Wrapper-sc-4bo34y-1') &&
-      !document.querySelector('div.SocialProfilestyled__Container-sc-1xd9o5x-0.Footerstyled__FooterContainerWrapper-sc-9xgbun-4')
+      !document.querySelector('footer') &&
+      !document.querySelector('div[class*="Footer"]')
     ) {
       clearInterval(tentarRemoverTudo);
-      console.log("✅ Todos os elementos foram removidos.");
+      console.log("✅ Todos os elementos indesejados foram removidos com sucesso.");
     }
   }, 500);
 </script>
+
 
     </body>
 </html>
