@@ -5180,30 +5180,56 @@
         <script type="text/javascript" src="https://statics-view.genially.com/view/static/js/runtime.026776a9.js"></script>
         <script src="https://statics-view.genially.com/view/ssr/social-ec5986d8b9ef92c969f4.js" type="text/javascript"></script>
 
-  <script>
-    const tentarRemoverTudo = setInterval(() => {
-      // Marca d'água
-      const watermark = document.querySelector('[data-cy="defaultWatermark"]');
-      if (watermark) {
-        watermark.remove();
-        console.log("✅ Watermark removida.");
-      }
+<script>
+  const tentarRemoverTudo = setInterval(() => {
+    // Marca d'água
+    const watermark = document.querySelector('[data-cy="defaultWatermark"]');
+    if (watermark) {
+      watermark.remove();
+      console.log("✅ Watermark removida.");
+    }
 
-      // Barra com logo do Genially
-      const banner = document.querySelector('section.StickyBannerstyled__Wrapper-sc-1oa946t-1');
-      if (banner) {
-        banner.remove();
-        console.log("✅ Banner removido.");
-      }
+    // Banner com logo fixo
+    const banner = document.querySelector('section.StickyBannerstyled__Wrapper-sc-1oa946t-1');
+    if (banner) {
+      banner.remove();
+      console.log("✅ Banner removido.");
+    }
 
-      // Para o intervalo quando os dois forem removidos
-      if (!document.querySelector('[data-cy="defaultWatermark"]') &&
-          !document.querySelector('section.StickyBannerstyled__Wrapper-sc-1oa946t-1')) {
-        clearInterval(tentarRemoverTudo);
-        console.log("✅ Todos os elementos foram removidos.");
-      }
-    }, 500);
-  </script>
-    
+    // Bloco de título e autor
+    const blocoInfo = document.querySelector('section.Infostyled__Wrapper-sc-bmwuw5-0');
+    if (blocoInfo) {
+      blocoInfo.remove();
+      console.log("✅ Informações removidas.");
+    }
+
+    // Transcrição
+    const transcricao = document.querySelector('section.Transcriptionsstyled__Wrapper-sc-4bo34y-1');
+    if (transcricao) {
+      transcricao.remove();
+      console.log("✅ Transcrição removida.");
+    }
+
+    // Rodapé com redes sociais e logo
+    const rodape = document.querySelector('div.SocialProfilestyled__Container-sc-1xd9o5x-0.Footerstyled__FooterContainerWrapper-sc-9xgbun-4');
+    if (rodape) {
+      rodape.remove();
+      console.log("✅ Rodapé removido.");
+    }
+
+    // Finaliza quando tudo for removido
+    if (
+      !document.querySelector('[data-cy="defaultWatermark"]') &&
+      !document.querySelector('section.StickyBannerstyled__Wrapper-sc-1oa946t-1') &&
+      !document.querySelector('section.Infostyled__Wrapper-sc-bmwuw5-0') &&
+      !document.querySelector('section.Transcriptionsstyled__Wrapper-sc-4bo34y-1') &&
+      !document.querySelector('div.SocialProfilestyled__Container-sc-1xd9o5x-0.Footerstyled__FooterContainerWrapper-sc-9xgbun-4')
+    ) {
+      clearInterval(tentarRemoverTudo);
+      console.log("✅ Todos os elementos foram removidos.");
+    }
+  }, 500);
+</script>
+
     </body>
 </html>
