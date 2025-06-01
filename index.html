@@ -1,24 +1,22 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-lang="title">Página com Caixa</title>
+    <title data-lang="title">Escola</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/168/168882.png" type="image/png" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
   <body class="min-h-screen flex flex-col bg-cover bg-center" style="background-image: url('https://i.pinimg.com/1200x/a8/ab/20/a8ab20f94412b47bc5c22deab38dd358.jpg');">
 
-    <!-- Botões superiores -->
+    <!-- Botões no topo -->
     <div class="fixed top-6 right-6 z-50 flex gap-3">
-      <!-- Home -->
       <a href="/me/">
         <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-xl shadow-md p-3 text-white hover:bg-white/20 transition duration-300">
           ⬅ <span data-lang="home">Home</span>
         </div>
       </a>
-      <!-- Tradução -->
       <button onclick="toggleLanguage()">
         <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-xl shadow-md p-3 text-white hover:bg-white/20 transition duration-300">
           🌐 <span data-lang="translate">Traduzir</span>
@@ -26,17 +24,20 @@
       </button>
     </div>
 
-    <!-- Título centralizado -->
+    <!-- Título -->
     <header class="mt-16 text-center px-4">
-      <h1 class="text-white text-5xl font-bold drop-shadow-lg" data-lang="mainTitle">Bem-vindo à nova página</h1>
+      <h1 class="text-white text-5xl font-bold drop-shadow-lg" data-lang="mainTitle">SELM</h1>
     </header>
 
-    <!-- Caixa de conteúdo grande -->
+    <!-- Caixa de conteúdo -->
     <main class="flex-1 flex items-center justify-center px-4 py-10">
       <div class="w-full max-w-4xl backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-8 text-white text-lg leading-relaxed">
-        <p data-lang="content">
-          Esta é uma grande caixa de conteúdo com visual elegante e translúcido. Você pode colocar texto, imagens, formulários ou o que quiser aqui dentro.
-        </p>
+        <h2 class="text-2xl font-semibold mb-4" data-lang="content">Links</h2>
+        <ul class="list-disc list-inside space-y-2">
+          <li><a href="https://www.google.com" class="text-blue-300 hover:underline">Google</a></li>
+          <li><a href="https://classroom.google.com" class="text-blue-300 hover:underline">Google Classroom</a></li>
+          <li><a href="https://meet.google.com" class="text-blue-300 hover:underline">Google Meet</a></li>
+        </ul>
       </div>
     </main>
 
@@ -45,25 +46,25 @@
       Criado com estilo 🚀
     </footer>
 
-    <!-- Tradução -->
+    <!-- Script de tradução -->
     <script>
       let currentLang = 'pt';
 
       const translations = {
         pt: {
-          title: 'Página com Caixa',
-          home: 'Home',
+          title: 'Escola',
+          home: 'Início',
           translate: 'Traduzir',
-          mainTitle: 'Bem-vindo à nova página',
-          content: 'Esta é uma grande caixa de conteúdo com visual elegante e translúcido. Você pode colocar texto, imagens, formulários ou o que quiser aqui dentro.',
+          mainTitle: 'SELM',
+          content: 'Links',
           footer: 'Criado com estilo 🚀'
         },
         en: {
-          title: 'Box Page',
+          title: 'School',
           home: 'Home',
           translate: 'Translate',
-          mainTitle: 'Welcome to the new page',
-          content: 'This is a large content box with a stylish translucent look. You can place text, images, forms, or whatever you want inside.',
+          mainTitle: 'SELM',
+          content: 'Links',
           footer: 'Made with style 🚀'
         }
       };
