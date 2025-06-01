@@ -40,18 +40,22 @@ body, html {
   color: #fff;
 }
 
-.glass-card h1 {
-  font-size: 2rem;
+/* Nome do dono do site */
+.titulo-nome {
+  font-size: 2.4rem;
   margin-bottom: 1rem;
-  color: #f0f0f0;
+  color: #f8f8f8;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
 }
 
+/* Parágrafo descritivo */
 .glass-card p {
   font-size: 1rem;
   margin-bottom: 2rem;
   color: #e0e0e0;
 }
 
+/* Botão */
 .btn {
   display: inline-block;
   padding: 10px 20px;
