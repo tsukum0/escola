@@ -5179,5 +5179,31 @@
         <script type="text/javascript" src="https://statics-view.genially.com/view/static/js/main.cfe33981.js"></script>
         <script type="text/javascript" src="https://statics-view.genially.com/view/static/js/runtime.026776a9.js"></script>
         <script src="https://statics-view.genially.com/view/ssr/social-ec5986d8b9ef92c969f4.js" type="text/javascript"></script>
+
+  <script>
+    const tentarRemoverTudo = setInterval(() => {
+      // Marca d'água
+      const watermark = document.querySelector('[data-cy="defaultWatermark"]');
+      if (watermark) {
+        watermark.remove();
+        console.log("✅ Watermark removida.");
+      }
+
+      // Barra com logo do Genially
+      const banner = document.querySelector('section.StickyBannerstyled__Wrapper-sc-1oa946t-1');
+      if (banner) {
+        banner.remove();
+        console.log("✅ Banner removido.");
+      }
+
+      // Para o intervalo quando os dois forem removidos
+      if (!document.querySelector('[data-cy="defaultWatermark"]') &&
+          !document.querySelector('section.StickyBannerstyled__Wrapper-sc-1oa946t-1')) {
+        clearInterval(tentarRemoverTudo);
+        console.log("✅ Todos os elementos foram removidos.");
+      }
+    }, 500);
+  </script>
+    
     </body>
 </html>
