@@ -1,23 +1,42 @@
-<iframe
-  id="genially"
-  src="https://view.genially.com/68213be88c55175106d5c5f2/interactive-content-trabalho-de-filosofia"
-  width="100%"
-  height="600"
-></iframe>
-
-<script>
-  setTimeout(() => {
-    try {
-      const iframe = document.getElementById('genially');
-      const marca = iframe.contentWindow.document.getElementById('canvaWatermark');
-      if (marca) {
-        marca.style.display = 'none';
-        console.log('Marca d\'água oculta com sucesso!');
-      } else {
-        console.log('Elemento #canvaWatermark não encontrado.');
-      }
-    } catch (err) {
-      console.warn('Não foi possível acessar o conteúdo do iframe por política de segurança (origem diferente).');
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visualizador de Genially sem marca d'água visível</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #000;
     }
-  }, 3000); // 3000 milissegundos = 3 segundos
-</script>
+
+    .iframe-container {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    iframe {
+      border: none;
+      position: absolute;
+      top: -50px; /* Move para cima para esconder rodapé */
+      left: 0;
+      width: 120vw; /* Aumenta largura */
+      height: 120vh; /* Aumenta altura */
+      transform: scale(1.2); /* Aplica zoom */
+      transform-origin: top left;
+    }
+  </style>
+</head>
+<body>
+  <div class="iframe-container">
+    <iframe
+      src="https://view.genially.com/68213be88c55175106d5c5f2/interactive-content-trabalho-de-filosofia"
+      allowfullscreen
+      loading="lazy"
+    ></iframe>
+  </div>
+</body>
+</html>
