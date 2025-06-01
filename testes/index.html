@@ -2,82 +2,47 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Genially sem watermark visível</title>
   <style>
     body {
       margin: 0;
       overflow: hidden;
       background: #000;
-      position: relative;
     }
 
     .iframe-container {
+      position: relative;
       width: 100vw;
       height: 100vh;
-      overflow: hidden;
-      position: relative;
     }
 
     iframe {
       border: none;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
     }
 
-    /* Esse <div> será a “máscara” que cobre a watermark */
-    #cover-watermark {
+    /* Caixa que cobre a marca d'água */
+    .cover-watermark {
       position: absolute;
-      pointer-events: none; /* para não atrapalhar cliques */
-      background: #000;     /* cor de fundo igual à do body */
+      bottom: 118px;     /* distância da parte inferior */
+      right: 43px;      /* distância da lateral direita */
+      width: 100px;     /* largura da marca */
+      height: 50px;     /* altura da marca */
+      background-color: black; /* mesma cor do fundo */
       z-index: 10;
+      pointer-events: none; /* não bloqueia cliques */
     }
   </style>
 </head>
 <body>
   <div class="iframe-container">
     <iframe
-      id="genially"
       src="https://view.genially.com/68213be88c55175106d5c5f2/interactive-content-trabalho-de-filosofia"
       allowfullscreen
       loading="lazy"
     ></iframe>
-    <!-- esse <div> vazio será redimensionado e reposicionado por script -->
-    <div id="cover-watermark"></div>
+    <div class="cover-watermark"></div>
   </div>
-
-  <script>
-    // Após a página “pai” carregar, aguarda um pouco e então posiciona a máscara
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        const iframe = document.getElementById('genially');
-        const cover = document.getElementById('cover-watermark');
-
-        // Pega tamanho e posição do iframe na viewport
-        const rect = iframe.getBoundingClientRect();
-
-        // Ajuste estes valores (largura, altura e offsets) de acordo com o local exato
-        // onde a watermark aparece dentro do Genially. Você pode inspecionar o site
-        // no navegador para descobrir a região aproximada da #canvaWatermark.
-        const watermarkWidth  = 100;  // largura aproximada da marca d'água (px)
-        const watermarkHeight = 50;   // altura aproximada da marca d'água (px)
-        const offsetFromRight = 118;   // distância da marca d'água até a borda direita do iframe (px)
-        const offsetFromBottom = 43;  // distância da marca d'água até a borda inferior do iframe (px)
-
-        // Calcula a posição da “máscara” em relação ao topo/esquerda da viewport:
-        const coverLeft = rect.left + rect.width - watermarkWidth  - offsetFromRight;
-        const coverTop  = rect.top  + rect.height - watermarkHeight - offsetFromBottom;
-
-        // Aplica tamanho e posição
-        cover.style.width  = watermarkWidth  + 'px';
-        cover.style.height = watermarkHeight + 'px';
-        cover.style.left   = coverLeft + 'px';
-        cover.style.top    = coverTop  + 'px';
-      }, 2000); // espera 2 segundos para o Genially carregar e renderizar a watermark
-    });
-  </script>
 </body>
 </html>
