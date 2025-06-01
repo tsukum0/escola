@@ -1,128 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-lang="title">Escola</title>
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/168/168882.png" type="image/png" />
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bem-vindo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background"></div>
 
-  <body class="min-h-screen flex flex-col bg-cover bg-center" style="background-image: url('https://images.hdqwalls.com/wallpapers/2020-the-mandalorian-yoda-j9.jpg');">
-
-    <!-- Botões no topo -->
-    <div class="fixed top-6 right-6 z-50 flex gap-3">
-      <a href="/me/">
-        <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-xl shadow-md p-3 text-white hover:bg-white/20 transition duration-300">
-          ⬅ <span data-lang="home">Início</span>
-        </div>
-      </a>
-      <button onclick="toggleLanguage()">
-        <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-xl shadow-md p-3 text-white hover:bg-white/20 transition duration-300">
-          🌐 <span data-lang="translate">Traduzir</span>
-        </div>
-      </button>
-    </div>
-
-    <!-- Título e subtítulo (linha com fundo estilo rodapé) -->
-    <header class="mt-16 px-4">
-      <div class="w-full max-w-7xl mx-auto backdrop-blur-lg bg-white/10 border border-white/20 rounded-xl shadow-md flex items-center justify-between px-6 py-4">
-        <h1 class="text-white text-4xl font-bold drop-shadow-lg" data-lang="mainTitle">SELM</h1>
-        <h2 class="text-white text-2xl font-semibold drop-shadow-md text-center" data-lang="content">Matérias</h2>
-        <div class="w-[100px]"></div> <!-- Espaço para balancear a direita -->
-      </div>
-    </header>
-
-    <main class="flex-1 flex flex-col items-center justify-center px-4 py-10 space-y-10">
-
-      <!-- Linha 1 -->
-      <div class="w-full max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="flex flex-col items-center">
-          <h3 class="text-white text-xl font-semibold mb-2">Matemática</h3>
-          <div class="w-full h-52 backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white text-base flex items-start justify-start">
-            <ul class="list-disc list-inside space-y-2"></ul>
-          </div>
-        </div>
-
-        <div class="flex flex-col items-center">
-          <h3 class="text-white text-xl font-semibold mb-2">Geografia</h3>
-          <div class="w-full h-52 backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white text-base flex items-start justify-start">
-            <ul class="list-disc list-inside space-y-2">
-              <li><a href="/escola/geografia/agropecuaria-no-brasil" class="text-blue-300 hover:underline">A agropecuaria na economia brasileira</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="flex flex-col items-center">
-          <h3 class="text-white text-xl font-semibold mb-2">Química</h3>
-          <div class="w-full h-52 backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white text-base flex items-start justify-start">
-            <ul class="list-disc list-inside space-y-2"></ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Linha 2 -->
-      <div class="w-full max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="flex flex-col items-center">
-          <h3 class="text-white text-xl font-semibold mb-2">Artes</h3>
-          <div class="w-full h-52 backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white text-base flex items-start justify-start">
-            <ul class="list-disc list-inside space-y-2"></ul>
-          </div>
-        </div>
-
-        <div class="flex flex-col items-center">
-          <h3 class="text-white text-xl font-semibold mb-2">Biologia</h3>
-          <div class="w-full h-52 backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white text-base flex items-start justify-start">
-            <ul class="list-disc list-inside space-y-2"></ul>
-          </div>
-        </div>
-
-        <div class="flex flex-col items-center">
-          <h3 class="text-white text-xl font-semibold mb-2">Inglês</h3>
-          <div class="w-full h-52 backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-xl p-6 text-white text-base flex items-start justify-start">
-            <ul class="list-disc list-inside space-y-2"></ul>
-          </div>
-        </div>
-      </div>
-
-    </main>
-
-    <!-- Rodapé -->
-    <footer class="backdrop-blur-lg bg-white/10 border-t border-white/20 text-white text-center p-4 text-sm" data-lang="footer">
-      Eu sou seu pai.
-    </footer>
-
-    <!-- Script de tradução -->
-    <script>
-      let currentLang = 'pt';
-
-      const translations = {
-        pt: {
-          title: 'Escola',
-          home: 'Início',
-          translate: 'Traduzir',
-          mainTitle: 'SELM',
-          content: 'Matérias',
-          footer: 'Eu sou seu pai.'
-        },
-        en: {
-          title: 'School',
-          home: 'Home',
-          translate: 'Translate',
-          mainTitle: 'SELM',
-          content: 'Subjects',
-          footer: 'I am your father.'
-        }
-      };
-
-      function toggleLanguage() {
-        currentLang = currentLang === 'pt' ? 'en' : 'pt';
-        for (const [key, value] of Object.entries(translations[currentLang])) {
-          const el = document.querySelector(`[data-lang="${key}"]`);
-          if (el) el.textContent = value;
-        }
-      }
-    </script>
-
-  </body>
+  <main class="glass-card">
+    <h1>👋 Bem-vindo</h1>
+    <p>Este é um site de introdução inspirado no estilo visual do Windows 11.</p>
+    <a href="#explorar" class="btn">Explorar</a>
+  </main>
+</body>
 </html>
