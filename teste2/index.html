@@ -5181,7 +5181,7 @@
         <script src="https://statics-view.genially.com/view/ssr/social-ec5986d8b9ef92c969f4.js" type="text/javascript"></script>
 
 <script>
-  // Aguarda 30 segundos antes de iniciar a remoção
+  // Aguarda 30 segundos antes de iniciar
   setTimeout(() => {
     const tentarRemoverTudo = setInterval(() => {
       // Marca d'água
@@ -5219,20 +5219,29 @@
         console.log("✅ Rodapé inteiro removido.");
       }
 
-      // Finaliza se tudo foi removido
+      // OneTrust consent SDK (cookies)
+      const oneTrust = document.getElementById('onetrust-consent-sdk') || document.querySelector('.onetrust-consent-sdk');
+      if (oneTrust) {
+        oneTrust.remove();
+        console.log("✅ OneTrust (cookies) removido.");
+      }
+
+      // Verificação final
       if (
         !document.querySelector('[data-cy="defaultWatermark"]') &&
         !document.querySelector('section.StickyBannerstyled__Wrapper-sc-1oa946t-1') &&
         !document.querySelector('div.SocialViewstyled__Paddings-sc-1bqtywi-0') &&
         !document.querySelector('section.Transcriptionsstyled__Wrapper-sc-4bo34y-1') &&
         !document.querySelector('footer') &&
-        !document.querySelector('div[class*="Footer"]')
+        !document.querySelector('div[class*="Footer"]') &&
+        !document.getElementById('onetrust-consent-sdk') &&
+        !document.querySelector('.onetrust-consent-sdk')
       ) {
         clearInterval(tentarRemoverTudo);
         console.log("✅ Todos os elementos indesejados foram removidos com sucesso.");
       }
     }, 500);
-  }, 15000); // 30 segundos de delay
+  }, 30000); // Delay de 30 segundos
 </script>
 
     </body>
