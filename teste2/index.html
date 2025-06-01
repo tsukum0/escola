@@ -5181,57 +5181,59 @@
         <script src="https://statics-view.genially.com/view/ssr/social-ec5986d8b9ef92c969f4.js" type="text/javascript"></script>
 
 <script>
-  const tentarRemoverTudo = setInterval(() => {
-    // Marca d'água
-    const watermark = document.querySelector('[data-cy="defaultWatermark"]');
-    if (watermark) {
-      watermark.remove();
-      console.log("✅ Watermark removida.");
-    }
+  // Aguarda 30 segundos antes de iniciar a remoção
+  setTimeout(() => {
+    const tentarRemoverTudo = setInterval(() => {
+      // Marca d'água
+      const watermark = document.querySelector('[data-cy="defaultWatermark"]');
+      if (watermark) {
+        watermark.remove();
+        console.log("✅ Watermark removida.");
+      }
 
-    // Banner com logo fixo
-    const banner = document.querySelector('section.StickyBannerstyled__Wrapper-sc-1oa946t-1');
-    if (banner) {
-      banner.remove();
-      console.log("✅ Banner removido.");
-    }
+      // Banner com logo fixo
+      const banner = document.querySelector('section.StickyBannerstyled__Wrapper-sc-1oa946t-1');
+      if (banner) {
+        banner.remove();
+        console.log("✅ Banner removido.");
+      }
 
-    // Bloco de informações sociais (nome, título, avatar)
-    const blocoSocial = document.querySelector('div.SocialViewstyled__Paddings-sc-1bqtywi-0');
-    if (blocoSocial) {
-      blocoSocial.remove();
-      console.log("✅ Bloco social removido.");
-    }
+      // Bloco de informações sociais
+      const blocoSocial = document.querySelector('div.SocialViewstyled__Paddings-sc-1bqtywi-0');
+      if (blocoSocial) {
+        blocoSocial.remove();
+        console.log("✅ Bloco social removido.");
+      }
 
-    // Transcrição
-    const transcricao = document.querySelector('section.Transcriptionsstyled__Wrapper-sc-4bo34y-1');
-    if (transcricao) {
-      transcricao.remove();
-      console.log("✅ Transcrição removida.");
-    }
+      // Transcrição
+      const transcricao = document.querySelector('section.Transcriptionsstyled__Wrapper-sc-4bo34y-1');
+      if (transcricao) {
+        transcricao.remove();
+        console.log("✅ Transcrição removida.");
+      }
 
-    // Rodapé (componente completo)
-    const rodapeCompleto = document.querySelector('footer') || document.querySelector('div[class*="Footer"]');
-    if (rodapeCompleto) {
-      rodapeCompleto.remove();
-      console.log("✅ Rodapé inteiro removido.");
-    }
+      // Rodapé completo
+      const rodapeCompleto = document.querySelector('footer') || document.querySelector('div[class*="Footer"]');
+      if (rodapeCompleto) {
+        rodapeCompleto.remove();
+        console.log("✅ Rodapé inteiro removido.");
+      }
 
-    // Verifica se tudo foi removido
-    if (
-      !document.querySelector('[data-cy="defaultWatermark"]') &&
-      !document.querySelector('section.StickyBannerstyled__Wrapper-sc-1oa946t-1') &&
-      !document.querySelector('div.SocialViewstyled__Paddings-sc-1bqtywi-0') &&
-      !document.querySelector('section.Transcriptionsstyled__Wrapper-sc-4bo34y-1') &&
-      !document.querySelector('footer') &&
-      !document.querySelector('div[class*="Footer"]')
-    ) {
-      clearInterval(tentarRemoverTudo);
-      console.log("✅ Todos os elementos indesejados foram removidos com sucesso.");
-    }
-  }, 500);
+      // Finaliza se tudo foi removido
+      if (
+        !document.querySelector('[data-cy="defaultWatermark"]') &&
+        !document.querySelector('section.StickyBannerstyled__Wrapper-sc-1oa946t-1') &&
+        !document.querySelector('div.SocialViewstyled__Paddings-sc-1bqtywi-0') &&
+        !document.querySelector('section.Transcriptionsstyled__Wrapper-sc-4bo34y-1') &&
+        !document.querySelector('footer') &&
+        !document.querySelector('div[class*="Footer"]')
+      ) {
+        clearInterval(tentarRemoverTudo);
+        console.log("✅ Todos os elementos indesejados foram removidos com sucesso.");
+      }
+    }, 500);
+  }, 30000); // 30 segundos de delay
 </script>
-
 
     </body>
 </html>
