@@ -1,261 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>La Fiesta de la Cosecha</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap');
-
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
-
-  body, html {
-    height: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url('https://images.hdqwalls.com/wallpapers/ondes-abstract-4k-wd.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #f0f0f3;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  footer {
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-    color: #ccc;
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-
-  .container {
-    max-width: 960px;
-    margin: 3rem auto 4rem auto;
-    padding: 0 1.5rem;
-  }
-
-  .card {
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 2rem;
-    margin-bottom: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
-  }
-
-  .card.title-card {
-    max-width: 100%;
-    padding: 3rem 2rem;
-    font-size: 2.8rem;
-    font-weight: 700;
-    text-align: center;
-    color: #f5f5f7;
-    letter-spacing: 2px;
-    user-select: none;
-    margin-bottom: 3rem;
-  }
-
-  h2 {
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #eaeaea;
-  }
-
-  p {
-    line-height: 1.6;
-    font-size: 1.1rem;
-    color: #ddd;
-  }
-
-  .card-image {
-    width: 100%;
-    border-radius: 0 0 16px 16px;
-    margin-top: 1rem;
-    object-fit: cover;
-    max-height: 200px;
-    display: block;
-  }
-
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.3);
-    border-radius: 10px;
-  }
-
-
-
-  @media (max-width: 600px) {
-    .card.title-card {
-      font-size: 2rem;
-      padding: 2rem 1.5rem;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-translate="siteTitle">La Fiesta de la Cosecha</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6') no-repeat center center fixed;
+      background-size: cover;
     }
-  }
-
-  /* Botão de tradução */
-  .translate-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.3);
-    color: #fff;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border-radius: 12px;
-    cursor: pointer;
-    z-index: 1000;
-    transition: background 0.3s ease;
-  }
-
-  .translate-btn:hover {
-    background: rgba(255, 255, 255, 0.25);
-  }
-
-  .btn-custom {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.3);
-    color: #fff;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 2px 6px rgba(0, 120, 215, 0.4);
-  }
-
-  .btn-custom:hover {
-    background-color: #005a9e; /* Tom mais escuro no hover */
-  }
-</style>
+    .glass {
+      backdrop-filter: blur(12px);
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+  </style>
 </head>
-<body>
-  <button class="translate-btn" onclick="toggleLanguage()">Traduzir</button>
+<body class="text-white font-sans min-h-screen flex items-center justify-center px-4">
 
-  <main class="container" role="main">
-    <section class="card title-card" aria-label="Título principal" data-translate="title">La Fiesta de la Cosecha</section>
+  <div class="glass max-w-3xl w-full p-8 text-center shadow-2xl" data-aos="fade-up">
+    <h1 class="text-4xl font-bold mb-4" data-translate="heroTitle">La Fiesta de la Cosecha</h1>
+    <p class="text-lg mb-6" data-translate="heroSubtitle">
+      Una celebración de gratitud, cultura y conexión con la tierra.
+    </p>
 
-    <section class="card" aria-label="Introducción">
-      <h2 data-translate="introTitle">Introducción</h2>
-      <p data-translate="introText">La fiesta de la cosecha es una celebración tradicional profundamente arraigada en muchas culturas alrededor del mundo. Su propósito principal es agradecer por los frutos recogidos tras el arduo trabajo en el campo, pero también encierra significados espirituales, comunitarios y simbólicos. Esta festividad marca el final de la temporada de cosecha y el comienzo de una etapa de descanso, reflexión y preparación para el nuevo ciclo agrícola. Se trata de una ocasión especial en la que las comunidades se unen para reconocer la importancia del trabajo agrícola, su impacto en la vida cotidiana y su papel esencial en la sustentabilidad alimentaria, la preservación cultural y el bienestar colectivo.</p>
-    </section>
+    <button onclick="toggleLanguage()" class="mb-6 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-xl border border-white transition-all">
+      🌐 <span data-translate="translateBtn">Traducir</span>
+    </button>
 
-    <section class="card" aria-label="Celebraciones">
-      <h2 data-translate="celebrationsTitle">Celebraciones</h2>
-      <p data-translate="celebrationsText">En los países de habla hispana, especialmente en las zonas rurales donde la agricultura sigue siendo una parte fundamental de la economía local y la identidad cultural, la fiesta de la cosecha se celebra con gran entusiasmo. La alegría se expresa mediante música folclórica, danzas típicas, juegos populares y comidas tradicionales elaboradas con los productos recién cosechados. Estos alimentos no solo nutren a las familias, sino que también representan el esfuerzo colectivo de todos los que trabajan la tierra, muchas veces en condiciones difíciles. Cada plato típico es una muestra de creatividad, historia y conexión con los antepasados, transmitiendo sabores, técnicas y valores que definen la gastronomía regional.
-
-Es común que las comunidades se reúnan en plazas, campos o espacios abiertos decorados con elementos naturales como espigas, flores, hojas y frutas. Estos espacios se transforman en escenarios de convivencia donde se comparten historias, se fortalecen los vínculos sociales y se transmite el conocimiento agrícola a las nuevas generaciones. Muchas veces, los ancianos del lugar son invitados a contar anécdotas, relatar cómo ha evolucionado la cosecha a lo largo del tiempo y enseñar técnicas tradicionales que han sido heredadas de generación en generación. Esta interacción entre jóvenes y mayores enriquece el sentido de pertenencia y el respeto por la sabiduría ancestral, promoviendo la continuidad de las costumbres y el amor por la tierra.
-
-Durante la celebración, se realizan desfiles coloridos con carros adornados con frutas, verduras, flores y otros elementos del campo, representando la abundancia obtenida gracias al esfuerzo colectivo. Estos desfiles son acompañados por comparsas, bandas musicales y grupos de baile que recorren las calles del pueblo contagiando alegría y orgullo. También se organizan concursos de platos típicos, donde las familias compiten mostrando su creatividad culinaria utilizando ingredientes de la cosecha reciente, destacando recetas tradicionales y nuevas propuestas gastronómicas. Además, se presentan obras teatrales, danzas tradicionales, representaciones históricas y exhibiciones de artesanía local, todo en un ambiente de unidad, cooperación y reconocimiento mutuo.</p>
-      <img src="https://www.absolutviajes.com/wp-content/uploads/2020/09/Ofrenda-de-Erntedank-1024x677.jpg.webp" alt="Frutas e flores decorativas" class="card-image" loading="lazy" />
-    </section>
-
-    <section class="card" aria-label="Rituales y Tradiciones">
-      <h2 data-translate="ritualsTitle">Rituales y Tradiciones</h2>
-      <p data-translate="ritualsText">En muchos lugares, se instalan ferias agrícolas y mercados donde los productores locales pueden vender directamente sus productos, generando ingresos adicionales y fortaleciendo la economía comunitaria. Estas ferias no solo fomentan el comercio justo, sino que también permiten que los visitantes conozcan más de cerca los procesos de cultivo, las variedades locales y las historias detrás de cada producto. Algunos eventos incluyen talleres educativos sobre agricultura sostenible, compostaje, reciclaje y preservación ambiental, reforzando el compromiso con un futuro ecológicamente responsable.
-
-También se llevan a cabo rituales religiosos o espirituales, como misas, procesiones y bendiciones de los campos, en los que se pide por una próxima temporada igualmente fructífera. Estos actos reflejan la profunda conexión entre la espiritualidad y la naturaleza, así como la gratitud hacia la tierra y las fuerzas divinas que hacen posible el crecimiento de los cultivos. En algunas regiones, se realizan ofrendas simbólicas a la madre tierra, combinando elementos de religiones ancestrales con prácticas modernas, lo cual demuestra la riqueza y diversidad cultural de estas celebraciones. Estas expresiones espirituales no solo reafirman la fe de las comunidades, sino que también fortalecen su vínculo con el entorno natural y con sus raíces más profundas.
-
-La fiesta de la cosecha no solo es un evento festivo, sino también una oportunidad invaluable para fortalecer los lazos comunitarios, transmitir valores de respeto por la naturaleza, fomentar la cooperación, resaltar la resiliencia de los agricultores y mantener vivas las tradiciones ancestrales. Es un momento para hacer una pausa, mirar hacia atrás con orgullo por lo logrado, valorar los frutos del esfuerzo colectivo y mirar hacia adelante con esperanza renovada. Las escuelas, las cooperativas, los grupos culturales y las organizaciones locales suelen participar activamente, promoviendo un sentido de inclusión, responsabilidad compartida y trabajo colaborativo. También es un espacio para discutir desafíos actuales del sector agrícola, como el cambio climático, la pérdida de biodiversidad o el acceso a recursos, creando conciencia y buscando soluciones comunitarias.</p>
-      <img src="https://www.absolutviajes.com/wp-content/uploads/2020/09/Fiesta-del-grano-en-Republica-Checa-1024x767.jpg.webp" alt="Comunidade celebrando ao ar livre" class="card-image" loading="lazy" />
-    </section>
-
-    <section class="card" aria-label="Conclusión">
-      <h2 data-translate="conclusionTitle">Conclusión</h2>
-      <p data-translate="conclusionText">En resumen, la fiesta de la cosecha es una expresión cultural rica en simbolismo que celebra el trabajo colectivo, la gratitud, la identidad comunitaria, la espiritualidad y la esperanza de un futuro próspero. Su carácter festivo, educativo, espiritual y comunitario la convierte en una de las celebraciones más significativas para quienes dependen de la tierra y valoran profundamente el fruto de su esfuerzo. A través de esta festividad, se reafirman los lazos entre las personas y su entorno, se rinde homenaje a los ciclos naturales y se renueva el compromiso de cuidar y respetar el planeta para las generaciones venideras. Más que una simple conmemoración, la fiesta de la cosecha representa un testimonio vivo de la relación armónica entre humanidad y naturaleza, una tradición que merece ser preservada, celebrada y transmitida con orgullo de generación en generación.</p>
-      <img src="https://www.absolutviajes.com/wp-content/uploads/2020/09/Erntedankfest-1024x760.jpg.webp" alt="Campo com plantas cultivadas" class="card-image" loading="lazy" />
-    </section>
-
-    <div style="text-align:center; margin-top: 1.5rem;">
-      <button class="btn-custom" onclick="window.location.href='/escola/materias/espanhol/la-fiesta-de-la-cosecha/en-espana/'">
-        Ve cómo es la fiesta de la cosecha en España
-      </button>
+    <div class="flex justify-center">
+      <a href="/escola/materias/espanhol/la-fiesta-de-la-cosecha/en-espana/" class="bg-green-500 hover:bg-green-600 px-6 py-3 rounded-2xl font-semibold transition-all shadow-md" data-translate="enterSiteBtn">
+        Entrar no Site
+      </a>
     </div>
+  </div>
 
-  </main>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
 
-<script>
-  const translations = {
-    es: {
-      title: "La Fiesta de la Cosecha",
-      introTitle: "Introducción",
-      introText: `La fiesta de la cosecha es una celebración tradicional profundamente arraigada en muchas culturas alrededor del mundo. Su propósito principal es agradecer por los frutos recogidos tras el arduo trabajo en el campo, pero también encierra significados espirituales, comunitarios y simbólicos. Esta festividad marca el final de la temporada de cosecha y el comienzo de una etapa de descanso, reflexión y preparación para el nuevo ciclo agrícola. Se trata de una ocasión especial en la que las comunidades se unen para reconocer la importancia del trabajo agrícola, su impacto en la vida cotidiana y su papel esencial en la sustentabilidad alimentaria, la preservación cultural y el bienestar colectivo.
-`,
-      celebrationsTitle: "Celebraciones",
-      celebrationsText: `En los países de habla hispana, especialmente en las zonas rurales donde la agricultura sigue siendo una parte fundamental de la economía local y la identidad cultural, la fiesta de la cosecha se celebra con gran entusiasmo. La alegría se expresa mediante música folclórica, danzas típicas, juegos populares y comidas tradicionales elaboradas con los productos recién cosechados. Estos alimentos no solo nutren a las familias, sino que también representan el esfuerzo colectivo de todos los que trabajan la tierra, muchas veces en condiciones difíciles. Cada plato típico es una muestra de creatividad, historia y conexión con los antepasados, transmitiendo sabores, técnicas y valores que definen la gastronomía regional.
+    const translations = {
+      es: {
+        siteTitle: "La Fiesta de la Cosecha",
+        heroTitle: "La Fiesta de la Cosecha",
+        heroSubtitle: "Una celebración de gratitud, cultura y conexión con la tierra.",
+        translateBtn: "Traducir",
+        enterSiteBtn: "Entrar al Sitio"
+      },
+      pt: {
+        siteTitle: "A Festa da Colheita",
+        heroTitle: "A Festa da Colheita",
+        heroSubtitle: "Uma celebração de gratidão, cultura e conexão com a terra.",
+        translateBtn: "Traduzir",
+        enterSiteBtn: "Entrar no Site"
+      }
+    };
 
-Es común que las comunidades se reúnan en plazas, campos o espacios abiertos decorados con elementos naturales como espigas, flores, hojas y frutas. Estos espacios se transforman en escenarios de convivencia donde se comparten historias, se fortalecen los vínculos sociales y se transmite el conocimiento agrícola a las nuevas generaciones. Muchas veces, los ancianos del lugar son invitados a contar anécdotas, relatar cómo ha evolucionado la cosecha a lo largo del tiempo y enseñar técnicas tradicionales que han sido heredadas de generación en generación. Esta interacción entre jóvenes y mayores enriquece el sentido de pertenencia y el respeto por la sabiduría ancestral, promoviendo la continuidad de las costumbres y el amor por la tierra.
+    let currentLang = "es";
+    function toggleLanguage() {
+      currentLang = currentLang === "es" ? "pt" : "es";
+      document.documentElement.lang = currentLang;
 
-Durante la celebración, se realizan desfiles coloridos con carros adornados con frutas, verduras, flores y otros elementos del campo, representando la abundancia obtenida gracias al esfuerzo colectivo. Estos desfiles son acompañados por comparsas, bandas musicales y grupos de baile que recorren las calles del pueblo contagiando alegría y orgullo. También se organizan concursos de platos típicos, donde las familias compiten mostrando su creatividad culinaria utilizando ingredientes de la cosecha reciente, destacando recetas tradicionales y nuevas propuestas gastronómicas. Además, se presentan obras teatrales, danzas tradicionales, representaciones históricas y exhibiciones de artesanía local, todo en un ambiente de unidad, cooperación y reconocimiento mutuo.`, // texto completo
-      ritualsTitle: "Rituales y Tradiciones",
-      ritualsText: `En muchos lugares, se instalan ferias agrícolas y mercados donde los productores locales pueden vender directamente sus productos, generando ingresos adicionales y fortaleciendo la economía comunitaria. Estas ferias no solo fomentan el comercio justo, sino que también permiten que los visitantes conozcan más de cerca los procesos de cultivo, las variedades locales y las historias detrás de cada producto. Algunos eventos incluyen talleres educativos sobre agricultura sostenible, compostaje, reciclaje y preservación ambiental, reforzando el compromiso con un futuro ecológicamente responsable.
+      document.querySelectorAll("[data-translate]").forEach(el => {
+        const key = el.getAttribute("data-translate");
+        el.innerText = translations[currentLang][key];
+      });
 
-También se llevan a cabo rituales religiosos o espirituales, como misas, procesiones y bendiciones de los campos, en los que se pide por una próxima temporada igualmente fructífera. Estos actos reflejan la profunda conexión entre la espiritualidad y la naturaleza, así como la gratitud hacia la tierra y las fuerzas divinas que hacen posible el crecimiento de los cultivos. En algunas regiones, se realizan ofrendas simbólicas a la madre tierra, combinando elementos de religiones ancestrales con prácticas modernas, lo cual demuestra la riqueza y diversidad cultural de estas celebraciones. Estas expresiones espirituales no solo reafirman la fe de las comunidades, sino que también fortalecen su vínculo con el entorno natural y con sus raíces más profundas.
-
-La fiesta de la cosecha no solo es un evento festivo, sino también una oportunidad invaluable para fortalecer los lazos comunitarios, transmitir valores de respeto por la naturaleza, fomentar la cooperación, resaltar la resiliencia de los agricultores y mantener vivas las tradiciones ancestrales. Es un momento para hacer una pausa, mirar hacia atrás con orgullo por lo logrado, valorar los frutos del esfuerzo colectivo y mirar hacia adelante con esperanza renovada. Las escuelas, las cooperativas, los grupos culturales y las organizaciones locales suelen participar activamente, promoviendo un sentido de inclusión, responsabilidad compartida y trabajo colaborativo. También es un espacio para discutir desafíos actuales del sector agrícola, como el cambio climático, la pérdida de biodiversidad o el acceso a recursos, creando conciencia y buscando soluciones comunitarias.`,
-      conclusionTitle: "Conclusión",
-      conclusionText: `En resumen, la fiesta de la cosecha es una expresión cultural rica en simbolismo que celebra el trabajo colectivo, la gratitud, la identidad comunitaria, la espiritualidad y la esperanza de un futuro próspero. Su carácter festivo, educativo, espiritual y comunitario la convierte en una de las celebraciones más significativas para quienes dependen de la tierra y valoran profundamente el fruto de su esfuerzo. A través de esta festividad, se reafirman los lazos entre las personas y su entorno, se rinde homenaje a los ciclos naturales y se renueva el compromiso de cuidar y respetar el planeta para las generaciones venideras. Más que una simple conmemoración, la fiesta de la cosecha representa un testimonio vivo de la relación armónica entre humanidad y naturaleza, una tradición que merece ser preservada, celebrada y transmitida con orgullo de generación en generación.`,
-    },
-    pt: {
-      title: "A Festa da Colheita",
-      introTitle: "Introdução",
-      introText: `A festa da colheita é uma celebração tradicional profundamente enraizada em muitas culturas ao redor do mundo. Seu principal objetivo é agradecer pelos frutos colhidos após o árduo trabalho no campo, mas também carrega significados espirituais, comunitários e simbólicos. Essa festividade marca o fim da temporada de colheita e o início de um período de descanso, reflexão e preparação para um novo ciclo agrícola. Trata-se de uma ocasião especial em que as comunidades se unem para reconhecer a importância do trabalho no campo, seu impacto na vida cotidiana e seu papel essencial na sustentabilidade alimentar, na preservação cultural e no bem-estar coletivo.`,
-
-      celebrationsTitle: "Celebrações",
-      celebrationsText: `Nos países de língua portuguesa, especialmente nas regiões rurais onde a agricultura ainda é uma parte fundamental da economia local e da identidade cultural, a festa da colheita é celebrada com grande entusiasmo. A alegria se expressa por meio de músicas folclóricas, danças típicas, brincadeiras populares e comidas tradicionais preparadas com os produtos recém-colhidos. Esses alimentos não apenas nutrem as famílias, mas também representam o esforço coletivo de todos os que trabalham a terra, muitas vezes em condições difíceis. Cada prato típico é uma amostra de criatividade, história e conexão com os antepassados, transmitindo sabores, técnicas e valores que definem a gastronomia regional.
-
-É comum que as comunidades se reúnam em praças, campos ou espaços abertos decorados com elementos naturais como espigas, flores, folhas e frutas. Esses espaços se transformam em cenários de convivência onde se compartilham histórias, se fortalecem os laços sociais e se transmite o conhecimento agrícola às novas gerações. Muitas vezes, os mais velhos da comunidade são convidados a contar causos, relatar como a colheita evoluiu ao longo do tempo e ensinar técnicas tradicionais que foram passadas de geração em geração. Essa interação entre jovens e anciãos enriquece o senso de pertencimento e o respeito pela sabedoria ancestral, promovendo a continuidade dos costumes e o amor pela terra.
-
-Durante a celebração, desfiles coloridos são realizados com carros enfeitados com frutas, verduras, flores e outros elementos do campo, representando a abundância obtida graças ao esforço coletivo. Esses desfiles são acompanhados por grupos folclóricos, bandas musicais e trupes de dança que percorrem as ruas da cidade transmitindo alegria e orgulho. Também são organizados concursos de pratos típicos, onde as famílias competem demonstrando sua criatividade culinária utilizando ingredientes da colheita recente, destacando receitas tradicionais e novas propostas gastronômicas. Além disso, são apresentadas peças teatrais, danças folclóricas, encenações históricas e exposições de artesanato local, tudo em um ambiente de união, cooperação e reconhecimento mútuo.`,
-
-      ritualsTitle: "Rituais e Tradições",
-      ritualsText: `Em muitos lugares, são montadas feiras agrícolas e mercados onde os produtores locais podem vender diretamente seus produtos, gerando renda extra e fortalecendo a economia comunitária. Essas feiras não apenas incentivam o comércio justo, mas também permitem que os visitantes conheçam mais de perto os processos de cultivo, as variedades locais e as histórias por trás de cada produto. Alguns eventos incluem oficinas educativas sobre agricultura sustentável, compostagem, reciclagem e preservação ambiental, reforçando o compromisso com um futuro ecologicamente responsável.
-
-Também são realizados rituais religiosos ou espirituais, como missas, procissões e bênçãos dos campos, nos quais se pede por uma próxima temporada igualmente frutífera. Esses atos refletem a profunda conexão entre espiritualidade e natureza, bem como a gratidão à terra e às forças divinas que tornam possível o crescimento das plantações. Em algumas regiões, realizam-se oferendas simbólicas à mãe terra, combinando elementos de religiões ancestrais com práticas modernas, o que demonstra a riqueza e diversidade cultural dessas celebrações. Essas expressões espirituais não apenas reafirmam a fé das comunidades, mas também fortalecem seu vínculo com o meio ambiente e com suas raízes mais profundas.
-
-A festa da colheita não é apenas um evento festivo, mas também uma oportunidade valiosa para fortalecer os laços comunitários, transmitir valores de respeito à natureza, fomentar a cooperação, destacar a resiliência dos agricultores e manter vivas as tradições ancestrais. É um momento para fazer uma pausa, olhar para trás com orgulho pelo que foi conquistado, valorizar os frutos do esforço coletivo e olhar para o futuro com esperança renovada. Escolas, cooperativas, grupos culturais e organizações locais geralmente participam ativamente, promovendo um senso de inclusão, responsabilidade compartilhada e trabalho colaborativo. Também é um espaço para discutir os desafios atuais do setor agrícola, como as mudanças climáticas, a perda da biodiversidade ou o acesso a recursos, criando consciência e buscando soluções comunitárias.`,
-
-      conclusionTitle: "Conclusão",
-      conclusionText: `Em resumo, a festa da colheita é uma expressão cultural rica em simbolismo que celebra o trabalho coletivo, a gratidão, a identidade comunitária, a espiritualidade e a esperança de um futuro próspero. Seu caráter festivo, educativo, espiritual e comunitário a torna uma das celebrações mais significativas para aqueles que dependem da terra e valorizam profundamente o fruto de seu esforço. Por meio dessa festividade, reafirmam-se os laços entre as pessoas e seu ambiente, homenageiam-se os ciclos naturais e renova-se o compromisso de cuidar e respeitar o planeta para as futuras gerações. Mais do que uma simples comemoração, a festa da colheita representa um testemunho vivo da relação harmônica entre a humanidade e a natureza, uma tradição que merece ser preservada, celebrada e transmitida com orgulho de geração em geração.`
+      document.title = translations[currentLang].siteTitle;
     }
-  };
-
-  let currentLang = 'es';
-
-  function toggleLanguage() {
-    currentLang = currentLang === 'es' ? 'pt' : 'es';
-    document.querySelector('.translate-btn').textContent = currentLang === 'es' ? 'Traduzir' : 'Traducir';
-
-    document.querySelectorAll('[data-translate]').forEach(el => {
-      const key = el.getAttribute('data-translate');
-      el.textContent = translations[currentLang][key];
-    });
-  }
-</script>
-  <footer>
-    <p>© 2025 Pedro R.</p>
-  </footer>
+  </script>
 </body>
 </html>
-<!-- Hello World -->
