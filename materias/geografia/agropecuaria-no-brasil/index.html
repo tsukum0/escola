@@ -5182,6 +5182,8 @@
 
 <script>
   setTimeout(() => {
+    document.body.style.backgroundColor = 'black';
+
     const seletor = [
       '[data-cy="defaultWatermark"]',
       'section.StickyBannerstyled__Wrapper-sc-1oa946t-1',
@@ -5202,15 +5204,13 @@
         }
       });
 
-      const aindaExiste = seletor.some(s => document.querySelector(s));
-      if (!aindaExiste) {
+      if (!seletor.some(s => document.querySelector(s))) {
         clearInterval(tentarRemover);
         console.log("✅ Todos os elementos removidos.");
       }
     }, 500);
-  }, 5000);
+  }, 2500);
 </script>
-
 
     </body>
 </html>
