@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profissões que envolve sistema de automação</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: #121212;
+  color: white;
+}
+
+.slide-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* === Primeiro Slide Modificado === */
+.slide.first-slide {
+  --color1: #00ffff;
+  --color2: #0044ff;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden; /* importante para limitar o ::before */
+}
+
+.slide.first-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://media.discordapp.net/attachments/1371319048071024672/1380405178112540752/WhatsApp_Image_2025-06-06_at_01.35.30.jpeg?ex=6843c201&is=68427081&hm=b3540b6ef44966d2cf02baf797c489a4e8b3a243f18796dad09e273762769bb0&=&format=webp&width=1523&height=856');
+  background-size: cover;
+  background-position: center;
+  filter: blur(12px);
+  z-index: -1;
+}
+
+.first-slide h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.first-slide .names-list {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 0.5rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* Logo canto inferior direito */
+.first-slide .logo {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 60px;
+  height: 60px;
+  background-image: url('https://media.discordapp.net/attachments/1371319048071024672/1380407695185809418/23_Sem_Titulo_20250606014709.png?ex=6843c459&is=684272d9&hm=29189d01506dd1c53108599e71dceb5610d6a231143cc8a75e3f0a2169be5171&=&format=webp&quality=lossless'); /* Exemplo de logo, trocar pela sua */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.8;
+  cursor: default;
+  z-index: 10;
+}
+
+/* === Estilo dos demais slides === */
+.slide-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  width: 45%;
+  height: 400px; /* igual altura da imagem */
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  position: relative;
+  box-shadow: 0 0 40px rgba(0,0,0,0.4);
+  border: 2px solid transparent;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* título no topo */
+}
+
+/* Traço neon pequeno circulando o card - sem animação (congelado) */
+.card::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: calc(100% + 8px);
+  height: calc(100% + 8px);
+  border-radius: 20px;
+  pointer-events: none;
+  background: transparent;
+  box-sizing: border-box;
+  border: 3px solid transparent;
+  border-top-color: var(--color1);
+  border-left-color: var(--color2);
+  /* animação removida para efeito congelado */
+  z-index: 10;
+}
+
+.text-content {
+  color: white;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-content h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1.2rem;
+  flex-shrink: 0;
+}
+
+.text-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  white-space: pre-line;
+  flex-grow: 1;
+}
+
+.image-content {
+  width: 45%;
+  height: 400px; /* maior altura */
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  box-shadow: 0 0 40px rgba(0,0,0,0.4);
+}
+
+/* Traço neon pequeno circulando a imagem - sem animação (congelado) */
+.image-content::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: calc(100% + 8px);
+  height: calc(100% + 8px);
+  border-radius: 20px;
+  pointer-events: none;
+  background: transparent;
+  box-sizing: border-box;
+  border: 3px solid transparent;
+  border-top-color: var(--color1);
+  border-left-color: var(--color2);
+  /* animação removida para efeito congelado */
+  z-index: 10;
+}
+
+/* Slide final - card centralizado */
+.final-slide .slide-content {
+  justify-content: center;
+  align-items: center;
+}
+.final-slide .card {
+  width: 50%;
+  height: auto;
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.final-slide .card .text-content h1 {
+  margin-bottom: 1rem;
+}
+.final-slide .card .text-content p {
+  font-size: 1.3rem;
+  margin-top: 0;
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+  .slide-content {
+    flex-direction: column;
+    width: 90%;
+  }
+  .card, .image-content {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 2rem;
+  }
+  .image-content {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 2rem 1.5rem;
+  }
+  .text-content h1 {
+    font-size: 1.8rem;
+  }
+  .text-content p {
+    font-size: 1rem;
+  }
+  .image-content {
+    height: 180px;
+  }
+
+  /* Ajuste para primeiro slide */
+  .first-slide h1 {
+    font-size: 2.4rem;
+  }
+  .first-slide .names-list {
+    font-size: 0.85rem;
+  }
+  .first-slide .logo {
+    width: 45px;
+    height: 45px;
+  }
+}
+</style>
+
+</head>
+<body>
+  <div class="slide-container">
+    <div class="slide active first-slide">
+      <h1>Profissões que envolve sistema de automação</h1>
+      <div class="names-list">Pedro, José Weslley, Gabriel, Leonardo Freire e Leonardo Guedes.
+      </div>
+      <div class="logo" title="Logo"></div>
+    </div>
+
+    <div class="slide" style="background-image: url('https://media.discordapp.net/attachments/1371319048071024672/1380402699094331412/797115-plc-wallpaper.jpg?ex=6843bfb2&is=68426e32&hm=1e4f19bcd16d65c564eea43cebb7f35f55633e20b78321bef892dac0c35c77de&=&format=webp&width=1521&height=856'); --color1: #ffdd00; --color2: #ffaa00;">
+      <div class="slide-content" style="justify-content: center;">
+        <div class="card">
+          <div class="text-content">
+            <h1>Tópicos</h1>
+            <p>• Quem são os profissionais em automação?
+    • História, evolução e relevância da automação
+    • Profissões de destaque na área
+    • Uso de inteligência artificial no processo de automação
+    • Questão automação x empregabilidade 
+    • Conclusão</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="slide" style="background-image: url('https://imagepng.org/wp-content/uploads/2017/10/quadrado-preto.png'); --color1: #ff00ff; --color2: #8800ff;">
+      <div class="slide-content">
+        <div class="card">
+          <div class="text-content">
+            <h1>Quem são os profissionais em automação?</h1>
+            <p>Conheça os objetivos principais do projeto e como ele se estrutura.</p>
+          </div>
+        </div>
+        <div class="image-content" style="background-image: url('https://imagepng.org/wp-content/uploads/2017/10/quadrado-preto.png');"></div>
+      </div>
+    </div>
+
+    <div class="slide" style="background-image: url('https://th.bing.com/th/id/R.ab599b0711410a011fa9b3863d8605f2?rik=%2frcYfS1hKQ5L4w&riu=http%3a%2f%2f1.bp.blogspot.com%2f-vkQ84twiGqI%2fUpawkG_KeII%2fAAAAAAAAcrk%2fzuamka5c4PQ%2fs1600%2fAnnex%2b-%2bChaplin%2c%2bCharlie%2b(Modern%2bTimes)_03.jpg&ehk=N5Q3qgoY5Nmx0jM6Xqq4ZEhqu9fAGN9dV9jibRjf5rU%3d&risl=&pid=ImgRaw&r=0'); --color1: #ff9900; --color2: #ff6600;">
+      <div class="slide-content">
+        <div class="card">
+          <div class="text-content">
+            <h1>História, evolução e relevância da automação</h1>
+            <p>• Origens e Revolução Industrial
+    • Papel da eletricidade na evolução da automação
+    • Era Digital
+    • Influência na economia
+    • Direitos trabalhistas
+    • Expectativa pro futuro
+            </p>
+          </div>
+        </div>
+        <div class="image-content" style="background-image: url('https://cdn.shopify.com/s/files/1/0061/7735/7891/files/ind-rev.jpg?v=1650898608');"></div>
+      </div>
+    </div>
+
+    <div class="slide" style="background-image: url('https://imagepng.org/wp-content/uploads/2017/10/quadrado-preto.png'); --color1: #00ff88; --color2: #009966;">
+      <div class="slide-content">
+        <div class="card">
+          <div class="text-content">
+            <h1>Profissões de destaque na área</h1>
+            <p>...</p>
+          </div>
+        </div>
+        <div class="image-content" style="background-image: url('https://imagepng.org/wp-content/uploads/2017/10/quadrado-preto.png');"></div>
+      </div>
+    </div>
+
+    <div class="slide" style="background-image: url('https://media.discordapp.net/attachments/1371319048071024672/1380405177823264829/WhatsApp_Image_2025-06-06_at_01.35.30_1.jpeg?ex=6843c201&is=68427081&hm=4cf83e0ae8a2e507de09c8d5856e52780c95f1b77027741437fd0ac70f638e05&=&format=webp&width=1523&height=856'); --color1: #ff4444; --color2: #cc0000;">
+      <div class="slide-content">
+        <div class="card">
+          <div class="text-content">
+            <h1>Uso de IA no processo de automação</h1>
+            <p>• O que é Inteligência Artificial?
+    • IA e Automação: Combinação Perfeita
+    • IA nas Fábricas e Indústrias
+    • IA nos Serviços e no Cotidiano
+    • Profissões Ligadas à IA
+    • Desafios e o Futuro da IA na Automação
+            </p>
+          </div>
+        </div>
+        <div class="image-content" style="background-image: url('https://media.discordapp.net/attachments/1371319048071024672/1380413272213164182/baixados_1.jpg?ex=6843c98a&is=6842780a&hm=2aff8febe9bb2da2a85c3228e063d3906c5fe15a1f4baeac5a46c31447b626bc&=&format=webp');"></div>
+      </div>
+    </div>
+
+
+    <div class="slide" style="background-image: url('https://imagepng.org/wp-content/uploads/2017/10/quadrado-preto.png'); --color1: #8888ff; --color2: #4444ff;">
+      <div class="slide-content">
+        <div class="card">
+          <div class="text-content">
+            <h1>Questão automação x empregabilidade</h1>
+            <p>• Por que a Automação gera desemprego?;
+    • Impacto da Automação na empregabilidade;
+    • A automação pode gerar empregos?;
+    • Influência da IA na empregabilidade;
+    • Desafios da Automação.
+            </p>
+          </div>
+        </div>
+        <div class="image-content" style="background-image: url('https://imagepng.org/wp-content/uploads/2017/10/quadrado-preto.png');"></div>
+      </div>
+    </div>
+
+
+    <div class="slide" style="background-image: url('https://imagepng.org/wp-content/uploads/2017/10/quadrado-preto.png'); --color1: #5566cc; --color2: #223355;">
+      <div class="slide-content">
+        <div class="card">
+          <div class="text-content">
+            <h1>Conclusão</h1>
+            <p>...</p>
+          </div>
+        </div>
+        <div class="image-content" style="background-image: url('https://imagepng.org/wp-content/uploads/2017/10/quadrado-preto.png');"></div>
+      </div>
+    </div>
+
+    <!-- Slide Finalização -->
+    <div class="slide final-slide" style="background-image: url('https://images.wallpapersden.com/image/download/wave-of-abstract-colors_a2tna2uUmZqaraWkpJRpaWVlrWdpa20.jpg'); --color1: #33cc33; --color2: #009900;">
+      <div class="slide-content">
+        <div class="card">
+          <div class="text-content">
+            <h1>Fim</h1>
+            <p>Obrigado pela atenção</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) slide.classList.add('active');
+      });
+    }
+
+    function changeSlide(direction) {
+      currentSlide += direction;
+      if (currentSlide < 0) currentSlide = slides.length - 1;
+      if (currentSlide >= slides.length) currentSlide = 0;
+      showSlide(currentSlide);
+    }
+
+    // Navegação por teclado
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown') changeSlide(1);
+      if (e.key === 'ArrowUp') changeSlide(-1);
+    });
+  </script>
+</body>
+</html>
